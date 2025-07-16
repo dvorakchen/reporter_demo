@@ -1,0 +1,3 @@
+OPENAI_KEY=""
+TTS_URL="https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation"
+ALI_DASHSCOPE_API_KEY=""

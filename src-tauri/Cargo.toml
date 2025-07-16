@@ -1,0 +1,42 @@
+[package]
+name = "reporter"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["DvorakChen<dvorakchen@outlook.com>"]
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "reporter_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+reqwest = { version = "0.12.22", features = ["blocking"] }
+sevenz-rust = "0.6.1"
+tauri-build = { version = "2", features = [] }
+tempdir = "0.3.7"
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri-plugin-shell = "2"
+tokio = { version = "1.46.1", features = ["full"] }
+tempdir = "0.3.7"
+config = { version = "0.15.12", features = ["toml"] }
+thiserror = "2.0.12"
+async-trait = "0.1.88"
+hound = "3.5.1"
+image = "0.25.6"
+nanoid = "0.4.0"
+openai = "1.1.1"
+reqwest = { version = "0.12.22", features = ["json"] }
+scraper = "0.23.1"
+
+[dev-dependencies]
+mockito = "1.7.0"
